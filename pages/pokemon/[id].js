@@ -2,7 +2,7 @@ import styles from '../../styles/Pokedex.module.scss'
 import Link from 'next/link';
 
 export async function getStaticPaths() {
-    const apiPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1126`);
+    const apiPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0`);
     const jsonPokemon = await apiPokemon.json();
     const total = jsonPokemon.count;  
 
